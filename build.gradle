@@ -1,0 +1,45 @@
+plugins {
+    // gradle5부터 gradle plugin 사용법 변경
+    // gradle plugin 사이트에 명시
+    id 'org.springframework.boot' version '2.4.1'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group 'com.toma.book'
+version '1.0-SNAPSHOT0-'+new Date().format("yyymmddhhmmss")
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+// junit 사용위해 필수로 선언되어야 함
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    //testCompile group: 'junit', name: 'junit', version: '4.12'
+    // gradle6가 되면서 complie, testCompile는 Soft Deprecate 됨
+    // 대신 implementation, testImplementation이 추가됨
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
+
+    //Lombok
+    implementation('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
+    testImplementation('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
+
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('org.mariadb.jdbc:mariadb-java-client')
+    implementation('com.h2database:h2')
+
+    //implementation('org.springframework.boot:spring-boot-starter-oauth2-client')    //권한 관련
+    //implementation('org.springframework.session:spring-session-jdbc')               //권한 관련
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    //testImplementation('org.springframework.security:spring-security-test')         //권한 관련
+}
