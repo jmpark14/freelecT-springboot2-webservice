@@ -1,4 +1,6 @@
-com/toma/book/springboot/web/dto/HelloResponseDtoTest.java
- com.toma.book.springboot.web.dto.HelloResponseDtoTest
 com/toma/book/springboot/web/HelloControllerTest.java
  com.toma.book.springboot.web.HelloControllerTest
+com/toma/book/springboot/web/dto/HelloResponseDtoTest.java
+ com.toma.book.springboot.web.dto.HelloResponseDtoTest
+com/toma/book/springboot/domain/posts/PostsRepositoryTest.java
+ com.toma.book.springboot.domain.posts.PostsRepositoryTest
